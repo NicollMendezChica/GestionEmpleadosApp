@@ -1,3 +1,7 @@
 const { Router } = require('express');
 const router = Router();
-export default router;
+
+var controllerAdministrador = require('../controllers/controllerAdministrador');
+router.get('/prueba', controllerAdministrador.prueba);
+
+module.exports = router;
