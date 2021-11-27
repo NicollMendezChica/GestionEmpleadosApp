@@ -17,4 +17,6 @@ app.use((req, res, next) => {
         res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
         next();
     });
+
+app.use(require('./routers/router'));
 module.exports = app;
