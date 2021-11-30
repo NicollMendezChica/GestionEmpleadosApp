@@ -2,7 +2,7 @@ var mongoose = require("../src/conexDB/conn");
 var Persona = require("../models/Persona");
 const Personas = require("../models/Personas");
 
-function prueba(req,res){
+function pruebaP(req,res){
 
         res.status(200).send({ message: 'probando una acción'});
     }
@@ -29,7 +29,7 @@ function buscarPersona(req,res){
     });
     }
 
-function listarpersonas(req,res){
+function listarPersona(req,res){
     var idPersona=req.params.id;
     if(!idPersona){
         var result=Persona.find({}).sort('nombre');
@@ -83,7 +83,7 @@ function deletePersona(req,res){
 }
 
 module.exports={
-    prueba,
+    pruebaP,
     savePersona,
     buscarPersona,
     listarPersona,

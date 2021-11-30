@@ -2,7 +2,7 @@ var mongoose = require("../src/conexDB/conn");
 var Empresa = require("../models/Empresa");
 const Empresas = require("../models/Empresas");
 
-function prueba(req,res){
+function pruebaEm(req,res){
 
         res.status(200).send({ message: 'probando una acción'});
     }
@@ -55,13 +55,13 @@ function updateEmpresa(req,res){
         if (err){
             res.send(err);
             res.status(500).send({message:'Error ID no encontrada'});
-        }  
+        }
         else{
             res.json(Empresas);
         }
     });
 }
-    
+
 
 function deleteEmpresa(req,res){
     var idEmpresa=req.params.id;
@@ -83,7 +83,7 @@ function deleteEmpresa(req,res){
 }
 
 module.exports={
-    prueba,
+    pruebaEm,
     saveEmpresa,
     buscarEmpresa,
     listarEmpresa,
