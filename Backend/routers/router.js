@@ -3,6 +3,7 @@ const router = Router();
 
 var controllerAdministrador = require('../controllers/controllerAdministrador');
 router.get('/prueba', controllerAdministrador.prueba);
+router.post('/crearAdmin', controllerAdministrador.saveAdministrador);
 
 var controllerEmpleado = require('../controllers/controllerEmpleado');
 router.get('/pruebaE', controllerEmpleado.pruebaE);
