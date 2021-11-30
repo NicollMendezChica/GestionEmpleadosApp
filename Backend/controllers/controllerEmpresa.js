@@ -1,5 +1,5 @@
 var mongoose = require("../src/conexDB/conn");
-var Empresa = require("../models/Empresa");
+var Empresa = require("../models/Empresas");
 const Empresas = require("../models/Empresas");
 
 function pruebaEm(req,res){

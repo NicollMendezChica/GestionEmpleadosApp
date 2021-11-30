@@ -1,5 +1,5 @@
 var mongoose = require("../src/conexDB/conn");
-var Persona = require("../models/Persona");
+var Persona = require("../models/Personas");
 const Personas = require("../models/Personas");
 
 function pruebaP(req,res){
@@ -29,7 +29,7 @@ function buscarPersona(req,res){
     });
     }
 
-function listarPersona(req,res){
+function listarPersonas(req,res){
     var idPersona=req.params.id;
     if(!idPersona){
         var result=Persona.find({}).sort('nombre');
@@ -51,13 +51,13 @@ function listarPersona(req,res){
 
 function updatePersona(req,res){
     var id = mongoose.Types.ObjectId(req.query.id);
-    personas.findOneAndUpdate(id, req.body, function(err, personas) {
+    Personas.findOneAndUpdate(id, req.body, function(err, personas) {
         if (err){
             res.send(err);
             res.status(500).send({message:'Error ID no encontrada'});
         }  
         else{
-            res.json(personas);
+            res.json(Personas);
         }
     });
 }
@@ -65,7 +65,7 @@ function updatePersona(req,res){
 
 function deletePersona(req,res){
     var idPersona=req.params.id;
-    Persona = personas.findByIdAndRemove(idPersona, function(err, Persona){
+    Persona = Personas.findByIdAndRemove(idPersona, function(err, Persona){
         if(err) {
             res.status(500).send({
                                     message: 'Error desconocido al ejecutar'
@@ -86,7 +86,7 @@ module.exports={
     pruebaP,
     savePersona,
     buscarPersona,
-    listarPersona,
+    listarPersonas,
     updatePersona,
     deletePersona
 }

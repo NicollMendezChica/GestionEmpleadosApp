@@ -29,7 +29,7 @@ function buscarEmpleado(req,res){
     });
     }
 
-function listarEmpleado(req,res){
+function listarEmpleados(req,res){
     var idEmpleado=req.params.id;
     if(!idEmpleado){
         var result=Empleado.find({}).sort('nombre');
@@ -51,13 +51,13 @@ function listarEmpleado(req,res){
 
 function updateEmpleado(req,res){
     var id = mongoose.Types.ObjectId(req.query.id);
-    Empleado.findOneAndUpdate(id, req.body, function(err, Empleado) {
+    Empleados.findOneAndUpdate(id, req.body, function(err, Empleado) {
         if (err){
             res.send(err);
             res.status(500).send({message:'Error ID no encontrada'});
         }  
         else{
-            res.json(Empleado);
+            res.json(Empleados);
         }
     });
 }
@@ -65,7 +65,7 @@ function updateEmpleado(req,res){
 
 function deleteEmpleado(req,res){
     var idEmpleado=req.params.id;
-    Empleado = Empleado.findByIdAndRemove(idEmpleado, function(err, Empleado){
+    Empleado = Empleados.findByIdAndRemove(idEmpleado, function(err, Empleado){
         if(err) {
             res.status(500).send({
                                     message: 'Error desconocido al ejecutar'
@@ -87,7 +87,7 @@ module.exports={
     pruebaE,
     saveEmpleado,
     buscarEmpleado,
-    listarEmpleado,
+    listarEmpleados,
     updateEmpleado,
     deleteEmpleado
 }

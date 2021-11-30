@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var PersonaSchema=Schema({
-        id:int,
+        id:Number,
         nombre:String,
-        telefono:int,
+        telefono:Number,
         correo:String
     });
 

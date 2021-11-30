@@ -13,7 +13,7 @@ var controllerEmpleado = require('../controllers/controllerEmpleado');
 router.get('/pruebaE', controllerEmpleado.pruebaE);
 router.post('/crearEmpleado', controllerEmpleado.saveEmpleado);
 router.get('/buscarEmpleado/:id',controllerEmpleado.buscarEmpleado);
-router.get('/listarEmpleado/:id?',controllerEmpleado.listarEmpleado);
+router.get('/listarEmpleado/:id?',controllerEmpleado.listarEmpleados);
 router.delete('/borraEmpleado/:id',controllerEmpleado.deleteEmpleado);
 router.put('/guardaEmpleado/:id',controllerEmpleado.updateEmpleado);
 
@@ -27,10 +27,10 @@ router.put('/guardaEmpresa/:id',controllerEmpresa.updateEmpresa);
 
 var controllerPersona = require('../controllers/controllerPersona');
 router.get('/pruebaP', controllerPersona.pruebaP);
-router.post('/crearAdmin', controllerPersona.savePersona);
-router.get('/buscarAdmin/:id',controllerPersona.buscarPersona);
-router.get('/listarAdmin/:id?',controllerPersona.listarPersona);
-router.delete('/borraAdmin/:id',controllerPersona.deletePersona);
-router.put('/guardaAdmin/:id',controllerPersona.updatePersona);
+router.post('/crearPersona', controllerPersona.savePersona);
+router.get('/buscarPersona/:id',controllerPersona.buscarPersona);
+router.get('/listarPersona/:id?',controllerPersona.listarPersonas);
+router.delete('/borraPersona/:id',controllerPersona.deletePersona);
+router.put('/guardaPersona/:id',controllerPersona.updatePersona);
 
 module.exports = router;

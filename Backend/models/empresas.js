@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var EmpresaSchema=Schema({
-        nit:int,
+        nit:Number,
         nombre:String
     });
 
