@@ -34,7 +34,7 @@ function listarAdministradores(req,res){
     if(!idAdministrador){
         var result=Administrador.find({}).sort('nombre');
     }else{
-        var result=idAdministradores.find({_id:idAdministrador});
+        var result=idAdministrador.find({_id:idAdministrador});
     }
     result.exec(function(err,result){
     if(err){
