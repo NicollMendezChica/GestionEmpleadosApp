@@ -4,6 +4,7 @@
   "description": "Un software que permitiría a una determinada empresa, llevar un control de horarios, asistencia y nómina de sus empleados, dando datos generalizados e individuales. Proyecto creado para el ciclo 4 de MisionTic 2022.",
   "main": "index.js",
   "scripts": {
+    "desarrollo": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
