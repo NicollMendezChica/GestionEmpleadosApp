@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var EmpleadoSchema=Schema({
-        usuario:String,
-        contraseña:String
+        cargo:String,
+        salario:Number
     });
 
 const Empleado= mongoose.model('Empleado',EmpleadoSchema);
